@@ -55,7 +55,7 @@ import {
                     width:'100px',
                     objectFit:'cover',
                   }}
-                  alt="Silhouette of a person's head" src="https://i.pinimg.com/originals/48/8f/74/488f74fb217b5c03dda21a0ad592b212.jpg" />
+                  alt="Silhouette of a person's head" src="https://www.usatoday.com/gcdn/-mm-/7fbb4dcd0e29b46245bb2ec4981ee02ad9e486c3/c=518-0-3419-1632/local/-/media/2016/01/24/USATODAY/usatsports/d1flagv2_toothless-jy-5084.jpg" />
                 </IonAvatar>
               </IonCol>
             </IonRow>
