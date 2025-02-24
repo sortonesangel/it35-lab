@@ -55,14 +55,14 @@ import {
                     width:'100px',
                     objectFit:'cover',
                   }}
-                  alt="Silhouette of a person's head" src="https://assets.florista.ph/uploads/product-pics/2486_58_2486.webp" />
+                  alt="Silhouette of a person's head" src="https://i.pinimg.com/originals/48/8f/74/488f74fb217b5c03dda21a0ad592b212.jpg" />
                 </IonAvatar>
               </IonCol>
             </IonRow>
           </IonGrid>
           <IonInput label="Username" >
           </IonInput>
-          <IonInput type="password" label="Password" value="Stephanie">
+          <IonInput type="password" label="Password" value="Angel">
             <IonInputPasswordToggle  slot="end"></IonInputPasswordToggle>
           </IonInput>
           <IonButton onClick={() => doLogin()} expand="full">
