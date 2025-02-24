@@ -18,9 +18,12 @@ import { IonReactRouter } from '@ionic/react-router';
 import { bookOutline, search, star } from 'ionicons/icons';
 import { Route, Redirect } from 'react-router';
 
-import Favorites from './home-tabs/Favorites';
-import Feed from './home-tabs/Feed';
-import Search from './home-tabs/Search';
+
+
+
+import Feed from './Home-tabs/Feed';
+import Search from './Home-tabs/Search';
+import Favorites from './Home-tabs/Favorites';
   
   const Home: React.FC = () => {
 
