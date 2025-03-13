@@ -1,37 +1,36 @@
+import React, { useState } from 'react';
 import { 
   IonAvatar,
   IonButton,
   IonCol,
-  IonContent, 
-  IonGrid, 
-  IonHeader, 
-  IonInput, 
-  IonInputPasswordToggle, 
-  IonPage, 
-  IonRow, 
-  IonTitle, 
-  IonToolbar, 
-  IonText, 
-  useIonRouter, 
-  IonToast, 
-  IonLabel, 
+  IonContent,
+  IonGrid,
+  IonHeader,
+  IonInput,
+  IonInputPasswordToggle,
+  IonPage,
+  IonRow,
+  IonTitle,
+  IonToolbar,
+  IonText,
+  useIonRouter,
+  IonToast,
+  IonLabel,
   IonModal
 } from '@ionic/react';
-import { useState } from 'react';
 
 const Login: React.FC = () => {
   const navigation = useIonRouter();
-  
+
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-  const [isRegistering, setIsRegistering] = useState(false);  
+  const [isRegistering, setIsRegistering] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
-  const [showSuccessToast, setShowSuccessToast] = useState(false); 
-  const [redirectToLogin, setRedirectToLogin] = useState(false); 
-
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
+  
   const registeredUsers = JSON.parse(localStorage.getItem('users') || '[]');
 
   const doLogin = () => {
@@ -39,9 +38,9 @@ const Login: React.FC = () => {
       setError('Username and password cannot be empty');
       return;
     }
-
+    
     const user = registeredUsers.find((u: { username: string; password: string; }) => u.username === username && u.password === password);
-
+    
     if (user) {
       navigation.push('/it35-lab/app', 'forward', 'replace');
     } else {
@@ -54,18 +53,18 @@ const Login: React.FC = () => {
       setError('Passwords do not match!');
       return;
     }
-
+    
     if (!email.endsWith('@nbsc.edu.ph')) {
       setError('Email must be from @nbsc.edu.ph domain!');
       return;
     }
-
+    
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     if (users.find((user: any) => user.username === username)) {
       setError('Username already exists!');
       return;
     }
-
+    
     setShowConfirmModal(true);
   };
 
@@ -74,15 +73,24 @@ const Login: React.FC = () => {
     const newUser = { username, email, password };
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
-
+  
     setShowConfirmModal(false);
     setShowSuccessToast(true);
+  
+    // Reset fields and switch back to login
+    setTimeout(() => {
+      setUsername('');
+      setEmail('');
+      setPassword('');
+      setConfirmPassword('');
+      setIsRegistering(false);
+      setShowSuccessToast(false);
+    }, 2000);
   };
 
   const handleSuccessToastClose = () => {
-    // After the toast is dismissed, redirect to login page
     navigation.push('/login');
-    setShowSuccessToast(false); 
+    setShowSuccessToast(false);
   };
 
   return (
@@ -188,12 +196,15 @@ const Login: React.FC = () => {
         <IonToast 
           isOpen={showSuccessToast} 
           message="Registration Successful!" 
-          duration={5000} 
+          duration={2000} 
           onDidDismiss={handleSuccessToastClose} 
         />
+
+       
       </IonContent>
     </IonPage>
   );
 };
+
 
 export default Login;
