@@ -33,6 +33,7 @@ const AlertBox: React.FC<{ message: string; isOpen: boolean; onClose: () => void
 
 const Register: React.FC = () => {
     const [username, setUsername] = useState('');
+   
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -77,7 +78,7 @@ const Register: React.FC = () => {
                 {
                     username,
                     user_email: email,
-                
+                   
                     user_password: hashedPassword,
                 },
             ]);
@@ -104,7 +105,6 @@ const Register: React.FC = () => {
                 <h1>Create your account</h1>
 
                 <IonInput label="Username" labelPlacement="stacked" fill="outline" type="text" placeholder="Enter a unique username" value={username} onIonChange={e => setUsername(e.detail.value!)} style={{ marginTop: '15px' }} />
-               
                 <IonInput label="Email" labelPlacement="stacked" fill="outline" type="email" placeholder="youremail@nbsc.edu.ph" value={email} onIonChange={e => setEmail(e.detail.value!)} style={{ marginTop: '15px' }} />
                 <IonInput label="Password" labelPlacement="stacked" fill="outline" type="password" placeholder="Enter password" value={password} onIonChange={e => setPassword(e.detail.value!)} style={{ marginTop: '15px' }} >
                     <IonInputPasswordToggle slot="end" />
@@ -133,7 +133,6 @@ const Register: React.FC = () => {
                                 <IonCardSubtitle>Email</IonCardSubtitle>
                                 <IonCardTitle>{email}</IonCardTitle>
 
-                               
                             </IonCardHeader>
                             <IonCardContent></IonCardContent>
                             <div style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '5px' }}>
