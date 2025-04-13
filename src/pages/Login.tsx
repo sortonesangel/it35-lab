@@ -70,11 +70,11 @@ const Login: React.FC = () => {
               overflow: 'hidden' 
             }}
           >
-          <img 
-             src="https://quizoto.com/assets/img/quiz-images/which-naruto-character-are-you-feature.jpg" 
+            <img 
+             src="https://i.pinimg.com/736x/1a/a6/c2/1aa6c22b7a29adbca5908a7f80b607fd.jpg" 
              alt="User Avatar" 
              style={{ width: '100%', height: '100%' }} 
-          />
+            />
           </IonAvatar>
           <h1 style={{
             display: 'flex',
