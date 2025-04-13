@@ -15,7 +15,7 @@ import {
     IonCardTitle,
     IonAlert,
 } from '@ionic/react';
-import { supabase } from '../utils/supabaseClient';
+import { supabase } from '../utils/supabaseClients';
 import bcrypt from 'bcryptjs';
 
 // Reusable Alert Component
