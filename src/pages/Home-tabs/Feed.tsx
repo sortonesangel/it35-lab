@@ -36,5 +36,5 @@ const Feed: React.FC = () => {
       </IonContent>
     </IonPage>
   );
-};
+}; 
 export default Feed;
