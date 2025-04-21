@@ -12,27 +12,10 @@ import {
     IonTitle, 
     IonToolbar 
 } from '@ionic/react';
-
 const Feed: React.FC = () => {
-  const feed = [
-   
-      
-    ];
-    
-
-  
   return (
     <IonPage>
       <IonHeader>
-      <IonCard>
-      <img alt="Silhouette of mountains" src="https://www.usatoday.com/gcdn/-mm-/7fbb4dcd0e29b46245bb2ec4981ee02ad9e486c3/c=518-0-3419-1632/local/-/media/2016/01/24/USATODAY/usatsports/d1flagv2_toothless-jy-5084.jpg" />
-      <IonCardHeader>
-        <IonCardTitle>Toothless</IonCardTitle>
-        <IonCardSubtitle>Night Fury</IonCardSubtitle>
-      </IonCardHeader>
-
-      <IonCardContent>My Favorite Character</IonCardContent>
-    </IonCard>
         <IonToolbar>
           <IonButtons slot='start'>
             <IonMenuButton></IonMenuButton>
@@ -41,19 +24,17 @@ const Feed: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: '100%',
-          }}
-        >
-          Feed
-        </div>
+      <IonCard>
+    <img alt="Silhouette of mountains" src="https://preview.redd.it/what-was-narutos-most-badass-moment-v0-l65m2lsle9ic1.jpeg?width=640&crop=smart&auto=webp&s=e4ac4fd0b0d122873332aa48d8c1407d7b959eb3" />
+    <IonCardHeader>
+      <IonCardTitle>Naruto</IonCardTitle>
+      <IonCardSubtitle>The Battle Begins: Naruto vs. Zabuza!</IonCardSubtitle>
+    </IonCardHeader>
+
+    <IonCardContent>Naruto Uzumaki is a young ninja from the Hidden Leaf Village who dreams of becoming the Hokage (the strongest ninja and leader of his village). Despite being shunned by others because he has the Nine-Tails Fox Demon (Kurama) sealed inside him, Naruto never gives up and continues to fight for his dream and earn the respect of his people.</IonCardContent>
+  </IonCard>
       </IonContent>
     </IonPage>
   );
 };
-
 export default Feed;
