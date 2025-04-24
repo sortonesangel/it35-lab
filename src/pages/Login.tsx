@@ -51,67 +51,65 @@ const Login: React.FC = () => {
   
   return (
     <IonPage>
-      <IonContent className='ion-padding'>
+      <IonContent className='ion-padding' style={{ background: '#f4f5f8' }}>
         <div style={{
-          display: 'flex',
-          flexDirection:'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginTop:'25%'
+          maxWidth: '400px',
+          margin: 'auto',
+          marginTop: '15%',
+          padding: '25px',
+          backgroundColor: '#ffffff',
+          borderRadius: '20px',
+          boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+          textAlign: 'center'
         }}>
-          <IonAvatar
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '150px',
-              height: '150px',
-              borderRadius: '50%', 
-              overflow: 'hidden' 
-            }}
-          >
+          <IonAvatar style={{
+            width: '120px',
+            height: '120px',
+            margin: 'auto',
+            marginBottom: '20px',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+          }}>
             <img 
-             src="https://i.pinimg.com/736x/ec/c0/8b/ecc08bdab3da8d5e1a1f4dc96b385bc6.jpg" 
-             alt="User Avatar" 
-             style={{ width: '100%', height: '100%' }} 
+              src="https://i.pinimg.com/736x/ec/c0/8b/ecc08bdab3da8d5e1a1f4dc96b385bc6.jpg" 
+              alt="User Avatar" 
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
             />
           </IonAvatar>
-          <h1 style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>USER LOGIN</h1>
+          <h1 style={{ fontSize: '22px', marginBottom: '25px', color: '#333' }}>USER LOGIN</h1>
+
           <IonInput
-            label="Email" 
-            labelPlacement="floating" 
-            fill="outline"
-            type="email"
-            placeholder="Enter Email"
-            value={email}
-            onIonChange={e => setEmail(e.detail.value!)}
-          />
-          <IonInput style={{ marginTop:'10px' }}      
-            fill="outline"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onIonChange={e => setPassword(e.detail.value!)}
-          >
-            <IonInputPasswordToggle slot="end"></IonInputPasswordToggle>
-          </IonInput>
+  label="Email" 
+  labelPlacement="floating" 
+  fill="outline"
+  type="email"
+  placeholder="Enter Email"
+  value={email}
+  onIonChange={e => setEmail(e.detail.value!)}
+  style={{ marginBottom: '16px', borderRadius: '8px', textAlign: 'left' }} // <-- this line!
+/>
+
+<IonInput
+  fill="outline"
+  type="password"
+  placeholder="Password"
+  value={password}
+  onIonChange={e => setPassword(e.detail.value!)}
+  style={{ marginBottom: '24px', borderRadius: '8px', textAlign: 'left' }} // <-- and this one!
+>
+  <IonInputPasswordToggle slot="end" />
+</IonInput>
+
+          <IonButton onClick={doLogin} expand="block" shape="round" style={{ marginBottom: '10px' }}>
+            Login
+          </IonButton>
+
+          <IonButton routerLink="/it35-lab/register" expand="block" fill="clear" shape="round">
+            Don't have an account? Register here
+          </IonButton>
         </div>
-        <IonButton onClick={doLogin} expand="full" shape='round'>
-          Login
-        </IonButton>
 
-        <IonButton routerLink="/it35-lab/register" expand="full" fill="clear" shape='round'>
-          Don't have an account? Register here
-        </IonButton>
-
-        {/* Reusable AlertBox Component */}
         <AlertBox message={alertMessage} isOpen={showAlert} onClose={() => setShowAlert(false)} />
 
-        {/* IonToast for success message */}
         <IonToast
           isOpen={showToast}
           onDidDismiss={() => setShowToast(false)}
