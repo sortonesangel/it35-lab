@@ -173,11 +173,11 @@ const EditProfile: React.FC = () => {
           </IonButtons>
         </IonHeader>
         <IonContent className="ion-padding">
-          <IonItem>
-            <IonText color="secondary">
-              <h1>Edit Profile</h1>
-            </IonText>
-          </IonItem>
+        <IonItem lines="none">
+          <IonText color="secondary" className="ion-text-left" style={{ width: '100%' }}>
+            <h1 style={{ fontWeight: 'bold', fontSize: '24px' }}>Edit Profile</h1>
+          </IonText>
+        </IonItem>
           <br />
   
           {/* Avatar Upload Section */}
@@ -323,4 +323,4 @@ const EditProfile: React.FC = () => {
     );
   };
    
-  export default EditProfile;
+  export default EditProfile; 
