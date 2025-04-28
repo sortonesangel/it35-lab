@@ -77,16 +77,20 @@ const Login: React.FC = () => {
           color: isDarkMode ? '#fff' : '#333'
         }}>
           <IonAvatar style={{
+            
             width: '120px',
             height: '120px',
             margin: 'auto',
             marginBottom: '20px',
             boxShadow: isDarkMode ? '0 2px 8px rgba(255,255,255,0.1)' : '0 2px 8px rgba(0,0,0,0.1)'
+            
           }}>
             <img 
-              src="https://i.pinimg.com/736x/ec/c0/8b/ecc08bdab3da8d5e1a1f4dc96b385bc6.jpg" 
+              src="https://i.pinimg.com/originals/96/bd/57/96bd57dfd46d27a32d435ad8eb82a997.gif" 
               alt="User Avatar" 
-              style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} 
+              style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%',
+              border: isDarkMode ? '2px solid #ffffff' : '2px solid #333333'
+               }} 
             />
           </IonAvatar>
           <h1 style={{ fontSize: '22px', marginBottom: '25px' }}>USER LOGIN</h1>
@@ -147,4 +151,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Login; 
